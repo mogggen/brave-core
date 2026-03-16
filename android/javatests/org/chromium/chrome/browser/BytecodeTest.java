@@ -1485,6 +1485,7 @@ public class BytecodeTest {
                         BottomControlsStacker.class,
                         BrowserStateBrowserControlsVisibilityDelegate.class,
                         FullscreenManager.class,
+                        int.class,
                         TabObscuringHandler.class,
                         int.class,
                         int.class,

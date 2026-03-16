@@ -34,6 +34,7 @@ import org.chromium.chrome.browser.back_press.BackPressManager;
 import org.chromium.chrome.browser.bookmarks.BookmarkModel;
 import org.chromium.chrome.browser.bookmarks.TabBookmarker;
 import org.chromium.chrome.browser.browser_controls.BottomControlsStacker;
+import org.chromium.chrome.browser.browser_controls.BottomControlsStacker.LayerType;
 import org.chromium.chrome.browser.browser_controls.BrowserControlsSizer;
 import org.chromium.chrome.browser.browser_controls.BrowserStateBrowserControlsVisibilityDelegate;
 import org.chromium.chrome.browser.browser_controls.TopControlsStacker;
@@ -393,6 +394,7 @@ public class BraveToolbarManager extends ToolbarManager
                             mFullscreenManager,
                             mEdgeToEdgeControllerSupplier,
                             mBottomControls,
+                            LayerType.BOTTOM_TOOLBAR,
                             bottomControlsContentDelegateSupplier,
                             mTabObscuringHandler,
                             mOverlayPanelVisibilitySupplier,
