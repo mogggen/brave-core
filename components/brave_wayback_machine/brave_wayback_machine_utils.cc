@@ -10,6 +10,7 @@
 #include <vector>
 
 #include "base/strings/string_util.h"
+#include "base/strings/utf_string_conversions.h"
 #include "brave/components/brave_wayback_machine/pref_names.h"
 #include "brave/components/brave_wayback_machine/url_constants.h"
 #include "components/prefs/pref_service.h"
@@ -57,8 +58,9 @@ GURL FixupWaybackQueryURL(const GURL& url) {
   std::string fragment;
   for (net::QueryIterator it(url); !it.IsAtEnd(); it.Advance()) {
     std::string key = std::string(it.GetKey());
-    const std::string decoded_key = url::DecodeUrlEscapeSequences(
+    url::UrlEscapeDecoder<1024> canonOutput(
         key, url::DecodeUrlMode::kUtf8OrIsomorphic);
+    const std::string decoded_key = base::UTF16ToUTF8(canonOutput.view());
     // Skip target keys.
     if (decoded_key == kTimeStampKey || decoded_key == kCallbackKey)
       continue;
