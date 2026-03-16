@@ -1003,6 +1003,7 @@ test("brave_browser_tests") {
     "//chrome/browser/ui/browser_window:create_browser_window",
     "//chrome/browser/ui/color:color_headers",
     "//chrome/browser/ui/color:mixers",
+    "//chrome/browser/ui/frame",
     "//chrome/browser/ui/hats",
     "//chrome/browser/ui/omnibox",
     "//chrome/browser/ui/startup",
