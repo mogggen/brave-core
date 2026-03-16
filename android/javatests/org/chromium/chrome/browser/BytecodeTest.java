@@ -1446,6 +1446,8 @@ public class BytecodeTest {
                         NonNullObservableSupplier.class,
                         OneshotSupplier.class,
                         WindowAndroid.class,
+                        ActivityResultTracker.class,
+                        DeviceLockActivityLauncher.class,
                         OneshotSupplier.class,
                         Supplier.class,
                         NonNullObservableSupplier.class,
