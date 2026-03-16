@@ -124,6 +124,7 @@ LocalModelsUpdaterState* LocalModelsUpdaterState::GetInstance() {
 }
 
 void LocalModelsUpdaterState::AddObserver(Observer* observer) {
+  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
   observers_.AddObserver(observer);
 
   // If component is already ready, notify immediately
@@ -133,10 +134,12 @@ void LocalModelsUpdaterState::AddObserver(Observer* observer) {
 }
 
 void LocalModelsUpdaterState::RemoveObserver(Observer* observer) {
+  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
   observers_.RemoveObserver(observer);
 }
 
 void LocalModelsUpdaterState::SetInstallDir(const base::FilePath& install_dir) {
+  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
   if (install_dir_ == install_dir) {
     return;
   }

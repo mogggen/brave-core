@@ -14,6 +14,7 @@
 #include "base/no_destructor.h"
 #include "base/observer_list.h"
 #include "base/observer_list_types.h"
+#include "base/sequence_checker.h"
 #include "base/values.h"
 #include "components/component_updater/component_installer.h"
 #include "components/update_client/update_client.h"
@@ -109,6 +110,8 @@ class LocalModelsUpdaterState {
   base::FilePath embeddinggemma_tokenizer_path_;
 
   base::ObserverList<Observer> observers_;
+
+  SEQUENCE_CHECKER(sequence_checker_);
 };
 
 void ManageLocalModelsComponentRegistration(
